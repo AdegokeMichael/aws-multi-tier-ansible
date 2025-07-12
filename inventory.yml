@@ -2,16 +2,10 @@ all:
   hosts:
     web01:
       ansible_host: <<EC2 private IP>>
-      ansible_user: <<default ssh user for target machine's Os>>
-      ansible_ssh_private_key_file: <<your private key>>
     web02:
       ansible_host: <<EC2 private IP>>
-      ansible_user: <<default ssh user for target machine's Os>>
-      ansible_ssh_private_key_file: <<your private key>>
     db01:
       ansible_host: <<EC2 private IP>>
-      ansible_user: <<default ssh user for target machine's Os>>
-      ansible_ssh_private_key_file: <<your private key>>
   
   children:
     webservers:
@@ -23,5 +17,9 @@ all:
         db01:
     
     w_virginia:
-      webservers:
-      dbservers:  
+      children:
+        webservers:
+        dbservers:  
+      vars:
+        ansible_user: <<default ssh user for target machine's Os>>
+        ansible_ssh_private_key_file: <<your private key>>
