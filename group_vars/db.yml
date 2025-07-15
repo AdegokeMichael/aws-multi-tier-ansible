@@ -1,0 +1,5 @@
+---
+vars:
+  dbname: accounts
+  db_user: Michael
+  db_pass: admin123
