@@ -26,6 +26,12 @@
   become: yes
   tasks:
 
+    - debug:
+        msg: "The dbname is {{dbname}}"
+
+    - debug:
+        var: dbuser
+
     - name: Install mariadb-server
       ansible.builtin.yum:
         name: mariadb-server
@@ -55,3 +61,9 @@
         priv: '*.*:ALL'
         state: present
         login_unix_socket: /var/lib/mysql/mysql.sock
+      
+      register: dboutput
+    
+    - name: print dboutput variable
+      debug:
+        var: dboutput
