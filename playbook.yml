@@ -42,16 +42,16 @@
         state: started
         enabled: yes
 
-    - name: Create a new database with name 'accounts'
+    - name: Create a new database
       community.mysql.mysql_db:
-        name: accounts
+        name: "{{dbname}}"
         state: present
         login_unix_socket: /var/lib/mysql/mysql.sock
 
-    - name: Create a new database with username 'Michael'
+    - name: Create a new database with username
       community.mysql.mysql_user:
-        name: Michael
-        password: 'admin123'
+        name: "{{db_user}}"
+        password: "{{db_pass}}"
         priv: '*.*:ALL'
         state: present
         login_unix_socket: /var/lib/mysql/mysql.sock
