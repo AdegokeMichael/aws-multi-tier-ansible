@@ -1,0 +1,6 @@
+---
+#-----------------------------------------------------------------------------------# Run "ansible-galaxy collection install -r reqirements.yml" to execute this file co# ntent
+#-----------------------------------------------------------------------------
+
+collections:
+  - name: community.mysql
