@@ -1,0 +1,7 @@
+---
+- name: Configure Appservers
+  hosts: appservers
+  become: yes
+  roles:
+    - app
+  
