@@ -1,0 +1,7 @@
+---
+- name: Configure DBservers
+  hosts: dbservers
+  become: yes
+  roles:
+    - db
+
