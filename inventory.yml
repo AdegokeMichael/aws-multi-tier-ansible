@@ -4,6 +4,9 @@ all:
       ansible_host: <<EC2 private IP>>
     web02:
       ansible_host: <<EC2 private IP>>
+    web03:
+      ansible_host: <<EC2 private IP>>
+      ansible_user: <<specific ssh user different from the global user variable>>
     db01:
       ansible_host: <<EC2 private IP>>
   
